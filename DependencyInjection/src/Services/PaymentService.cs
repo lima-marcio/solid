@@ -1,8 +1,12 @@
 public class PaymentService
 {
+  private readonly IPayment _payment;
+  public PaymentService(IPayment payment)
+  {
+    _payment = payment;
+  }
   public void ProcessPayment(decimal amount)
   {
-    var paymentMethod = new CreditCardPayment();
-    paymentMethod.ProcessPayment(amount);
+    _payment.ProcessPayment(amount);
   }
 }
