@@ -1,7 +1,7 @@
-public class ExportTXT
+public class ExportTXT : IExportFile
 {
-  public void ExportToTXT(Order order)
+  public void ExportToFile(Order order)
   {
-    Console.WriteLine("Exporting order to TXT...");
+    Console.WriteLine($"Exporting order {order.Id} to TXT...");
   }
 }

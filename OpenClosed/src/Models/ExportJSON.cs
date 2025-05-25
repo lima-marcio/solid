@@ -1,7 +1,7 @@
-public class ExportJSON
+public class ExportJSON : IExportFile
 {
-  public void ExportToJSON(Order order)
+  public void ExportToFile(Order order)
   {
-    Console.WriteLine("Exporting order to JSON...");
+    Console.WriteLine($"Exporting order {order.Id} to JSON...");
   }
 }

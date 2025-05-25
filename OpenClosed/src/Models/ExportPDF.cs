@@ -1,7 +1,7 @@
-public class ExportPDF
+public class ExportPDF : IExportFile
 {
-  public void ExportToPDF(Order order)
+  public void ExportToFile(Order order)
   {
-    Console.WriteLine("Exporting order to PDF...");
+    Console.WriteLine($"Exporting order {order.Id} to PDF...");
   }
 }
