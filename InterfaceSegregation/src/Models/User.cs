@@ -8,16 +8,16 @@ public class User : IUser
   {
     Console.WriteLine("Logout successful.");
   }
-  public void CreateUser(string username, string email)
-  {
-    Console.WriteLine($"User {username} with email {email} created.");
-  }
-  public void DeleteUser(int id)
-  {
-    Console.WriteLine($"User ID {id} deleted.");
-  }
-  public void UpdateUser(int id, string username, string email)
-  {
-    Console.WriteLine($"User ID {id} updated.");
-  }
+  // public void CreateUser(string username, string email)
+  // {
+  //   Console.WriteLine($"User {username} with email {email} created.");
+  // }
+  // public void DeleteUser(int id)
+  // {
+  //   Console.WriteLine($"User ID {id} deleted.");
+  // }
+  // public void UpdateUser(int id, string username, string email)
+  // {
+  //   Console.WriteLine($"User ID {id} updated.");
+  // }
 }
