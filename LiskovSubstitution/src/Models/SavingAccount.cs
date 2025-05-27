@@ -1,28 +1,6 @@
-public class SavingAccount : IAccount
+public class SavingAccount : BaseAccount
 {
-  private decimal _balance;
-
-  public SavingAccount(decimal initialBalance, decimal interestRate)
+  public SavingAccount(decimal initialBalance) : base(initialBalance)
   {
-    _balance = initialBalance;
-  }
-
-  public void Deposit(decimal amount)
-  {
-    _balance += amount;
-  }
-
-  public void Withdraw(decimal amount)
-  {
-    if (amount > _balance)
-    {
-      throw new InvalidOperationException("Insufficient funds for withdrawal.");
-    }
-    _balance -= amount;
-  }
-
-  public decimal GetBalance()
-  {
-    return _balance;
   }
 }

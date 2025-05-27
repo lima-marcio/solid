@@ -1,23 +1,15 @@
-public class InvestimentAccount : IAccount
+public class InvestimentAccount : BaseAccount
 {
-  private decimal _balance;
-
-  public InvestimentAccount(decimal initialBalance)
+  public InvestimentAccount(decimal initialBalance) : base(initialBalance)
   {
-    _balance = initialBalance;
   }
-  public void Deposit(decimal amount)
+  public override void Withdraw(decimal amount)
   {
-    _balance += amount;
-  }
-
-  public void Withdraw(decimal amount)
-  {
-    throw new InvalidOperationException("Account type does not allow direct withdrawal.");
-  }
-
-  public decimal GetBalance()
-  {
-    return _balance;
+    Console.WriteLine($"Withdrawing {amount} from InvestingAccount.");
+    if (amount < 500)
+    {
+      throw new InvalidOperationException("Minimum withdrawal amount is 500.");
+    }
+    Balance -= amount;
   }
 }
