@@ -1,8 +1,8 @@
-public class BaseAccount : IAccount
+public abstract class BaseAccount : IDepositable, IReadableAccount
 {
   protected decimal Balance;
 
-  public BaseAccount(decimal initialBalance)
+  protected BaseAccount(decimal initialBalance)
   {
     Balance = initialBalance;
   }
@@ -13,24 +13,8 @@ public class BaseAccount : IAccount
     {
       throw new ArgumentException("Deposit amount must be positive.", nameof(amount));
     }
+    Balance += amount;
   }
 
-  public decimal GetBalance()
-  {
-    return Balance;
-  }
-
-  public virtual void Withdraw(decimal amount)
-  {
-
-    if (amount <= 0)
-    {
-      throw new ArgumentException("Withdrawal amount must be positive.", nameof(amount));
-    }
-    Balance -= amount;
-    if (Balance < 0)
-    {
-      throw new InvalidOperationException("Insufficient funds for withdrawal.");
-    }
-  }
+  public decimal GetBalance() => Balance;
 }
